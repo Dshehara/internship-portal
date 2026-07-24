@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Internship - InternHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark" id="mainNav"></nav>
+
+<div class="page-header">
+    <div class="container">
+        <h4>📢 Post an Internship</h4>
+        <p>Fill in the details below to publish your listing</p>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card p-4">
+                <div id="errorMsg"   class="alert alert-danger d-none"></div>
+                <div id="successMsg" class="alert alert-success d-none"></div>
+
+                <div class="mb-3">
+                    <label class="form-label">Internship Title *</label>
+                    <input type="text" class="form-control" id="title"
+                        placeholder="e.g. Software Engineering Intern">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description *</label>
+                    <textarea class="form-control" id="description" rows="4"
+                        placeholder="Describe the role, responsibilities, and what you're looking for..."></textarea>
+                </div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Location *</label>
+                        <input type="text" class="form-control" id="location"
+                            placeholder="e.g. Colombo 03">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Duration</label>
+                        <select class="form-select" id="duration">
+                            <option value="3 months">3 months</option>
+                            <option value="6 months" selected>6 months</option>
+                            <option value="12 months">12 months</option>
+                            <option value="Flexible">Flexible</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Application Deadline</label>
+                    <input type="date" class="form-control" id="deadline">
+                </div>
+
+                <button class="btn btn-primary w-100 btn-lg" onclick="postListing()">
+                    📢 Publish Internship
+                </button>
+                <p class="text-muted small text-center mt-3 mb-0">
+                    You must be logged in as a <strong>Company</strong> to post listings.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/listings.js"></script>
+</body>
+</html>
