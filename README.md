@@ -4,7 +4,7 @@ A full-stack internship portal connecting Sri Lankan undergraduate students
 with companies offering internship opportunities.
 
 ## 🔗 Live Demo
-> Coming soon (deploying with Railway + GitHub Pages)
+https://dshehara.github.io/internship-portal
 
 ---
 
