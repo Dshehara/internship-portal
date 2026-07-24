@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings - InternHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark" id="mainNav"></nav>
+
+<div class="page-header">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>
+            <h4>💼 Internship Listings</h4>
+            <p id="listingCount">Loading...</p>
+        </div>
+        <a href="post-listing.html" class="btn btn-light btn-sm fw-600">+ Post Internship</a>
+    </div>
+</div>
+
+<div class="container pb-5">
+
+    <!-- Filters -->
+    <div class="card mb-4 p-3">
+        <div class="row g-2">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-text">🔍</span>
+                    <input type="text" class="form-control" id="searchInput"
+                        placeholder="Title or company..." oninput="filterListings()">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text">📍</span>
+                    <input type="text" class="form-control" id="locationFilter"
+                        placeholder="Location..." oninput="filterListings()">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="durationFilter" onchange="filterListings()">
+                    <option value="">⏱ All durations</option>
+                    <option value="3">3 months</option>
+                    <option value="6">6 months</option>
+                    <option value="12">12 months</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-primary w-100" onclick="clearFilters()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="applyMsg" class="alert d-none mb-3"></div>
+
+    <div id="loadingSpinner" class="text-center py-5">
+        <div class="spinner-border"></div>
+        <p class="mt-3 text-muted fw-500">Finding internships...</p>
+    </div>
+
+    <div id="noResults" class="empty-state d-none">
+        <div class="empty-icon">🔍</div>
+        <h5>No internships found</h5>
+        <p>Try different keywords or clear the filters</p>
+        <button class="btn btn-outline-primary" onclick="clearFilters()">Clear Filters</button>
+    </div>
+
+    <div class="row g-3" id="listingsContainer"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/listings.js"></script>
+</body>
+</html>
